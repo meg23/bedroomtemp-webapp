@@ -36,7 +36,7 @@ class Main(webapp2.RequestHandler):
         if current_temp < 65:
             message = "Pretty cool right now"
         elif season == "summer" and current_temp < 73 and current_temp > 65:
-            message = "Pretty confortable right now"
+            message = "Pretty comfortable right now"
         elif season == "summer" and current_temp > 73 and current_temp < 80:
             message = "Starting to get warm here"
         elif current_temp >= 80:
