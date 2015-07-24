@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import webapp2
 import logging
 import json
@@ -6,7 +8,7 @@ import os
 from datetime import datetime, date, time
 from google.appengine.ext.webapp import template
 from google.appengine.ext import db
-from helper import get_season
+from season import get_season
 
 log = logging.getLogger('webapp')
 
@@ -14,7 +16,7 @@ class Temperature(db.Model):
     temp = db.IntegerProperty(required=True);
     date = db.DateTimeProperty(auto_now_add=True)
 
-class User(db.model):
+class User(db.Model):
     email = db.StringProperty();
     authtoken = db.StringProperty();
 
