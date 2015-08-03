@@ -12,3 +12,16 @@ handlers:
   static_dir: static/js
 - url: /.*
   script: code.app
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
+
+builtins:
+- deferred: on
+- appstats: on
