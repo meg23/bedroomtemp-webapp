@@ -5,13 +5,9 @@ from google.appengine.api import memcache
 from google.appengine.api import urlfetch
 from secrets import DEVICE_ID, ACCESS_TOKEN
 
-class Photon():
+class Photon(object):
     
     def get_bedroomtemp(self):
-
-        '''
-        Fetch temperature data from photon cloud
-        '''
 
         base = "https://api.particle.io/v1/devices"
         rpc = urlfetch.create_rpc()
@@ -32,7 +28,6 @@ class Photon():
             else:
                memcache.replace('current_temp', temp)
                
-
         except urlfetch.DownloadError:
             logging.error("Failed download the data from the photon cloud") 
 

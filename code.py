@@ -19,12 +19,11 @@ class Main(webapp2.RequestHandler):
 
     def get(self):
 
-        # defer fetch task to backend
         photon = Photon()
-        result = deferred.defer(photon.get_bedroomtemp)
+        photon.get_bedroomtemp
 
-        # get value from cache
         current_temp =  memcache.get('current_temp') or 0
+        log.info("Got this temperature: %s" % current_temp)
 
         season = get_season(datetime.now())
         message = ""
