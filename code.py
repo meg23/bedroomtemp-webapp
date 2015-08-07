@@ -69,7 +69,7 @@ class Main(webapp2.RequestHandler):
     def message_generator(self):
         messages = [
            "Its so hot in your house you could cook a turkey.",
-           "Its so hot Your furniture is melting.",
+           "Its so hot your furniture is melting.",
            "So hot your stuffed animals have applied for asylum in Abu Dhabi.",
            "Its hotter than India right now.",
            "The heat store called they are running out of heat.",
