@@ -10,6 +10,8 @@ handlers:
   static_dir: static/fonts
 - url: /js
   static_dir: static/js
+- url: /images
+  static_dir: static/images
 - url: /.*
   script: code.app
 - url: /favicon\.ico

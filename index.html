@@ -1,103 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>One Page Wonder - Start Bootstrap Template</title>
-
-    <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link href="css/one-page-wonder.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.js"></script>
-
 </head>
-
 <body>
-
-    <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                </button>
-                <a class="navbar-brand" href="#">Get me air conditioning!</a>
+                <a class="navbar-brand" href="#">Yo dog, its hot like Brazil up in herr.</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
     </nav>
-
-    <!-- Full Width Image Header -->
     <header>
         <div class="headline">
             <div class="container">
                 <h1>Its <mark>{{ current_temp }}&deg;F</mark> in my bedroom.</h1>
+                <h2><a href="#myModal" data-toggle="modal">>>> Tell us how hot it is <<<</a></h2>
                 <h2>{{ message }}</h2>
             </div>
         </div>
     </header>
-
-    <!-- Page Content -->
-    <div class="container">
-
-        <hr class="featurette-divider">
-
-        <!-- First Featurette -->
-        <div class="featurette" id="about">
-            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
-            <h2 class="featurette-heading">My Lovely Wife Hates
-                <span class="text-muted">Air Conditioning</span>
-            </h2>
-            <p class="lead">Yeah, thats right. She actually hates air conditioning. Thats why I setup a photon particle with a temperature sensor to broadcast my climate. The sensor is setup in our bedroom, the only room with an air conditioner. </p>
+<div class="container">
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <div class="modal-dialog modal-lg " >
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+             <h3 id="myModalLabel">Let her know that it is too hot</h3>
+           </div>
+           <div class="modal-body">
+             <form class="form-horizontal col-sm-12">
+               <div class="form-group"><label>Name</label><input class="form-control required" name="name"  placeholder="Your name" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text"></div>
+               <div class="form-group"><label>Message</label><textarea class="form-control" name="message" data-placement="top" data-trigger="manual">{{ message_default }}</textarea></div>
+               <div class="form-group"><label>E-Mail</label><input class="form-control email" name="email" placeholder="email@you.com" data-placement="top" data-trigger="manual" data-content="Must be a valid e-mail address (user@gmail.com)" type="text"></div>
+               <div class="form-group"><button type="submit" formmethod="post" formaction="/" class="btn btn-success pull-right">Send It!</button> <p class="help-block pull-left text-danger hide" id="form-error">&nbsp; The form is not valid. </p></div>
+             </form>
+           </div>
+           <div class="modal-footer">
+             <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+           </div>
          </div>
-
+       </div>
+     </div>
         <hr class="featurette-divider">
-
-        <!-- Second Featurette -->
-        <div class="featurette" id="guestbook">
-            <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/500x500">
-            <h2 class="featurette-heading">The Second Heading
-                <span class="text-muted">Is Pretty Cool Too.</span>
+        <div class="featurette" id="about">
+            <img class="featurette-image img-circle img-responsive pull-right" src="/images/photon.jpeg">
+            <h2 class="featurette-heading">Powered by a 
+                <span class="text-muted">Spark Photon</span>
             </h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-
+            <p class="lead">This page fetches the temperature of my bedroom from a Particle Photon connected to a cheap DHT sensor. </p>
+         </div>
         <hr class="featurette-divider">
-
-        <!-- Third Featurette -->
-        <div class="featurette" id="contact">
-            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
-            <h2 class="featurette-heading">The Third Heading
-                <span class="text-muted">Will Seal the Deal.</span>
-            </h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
@@ -105,16 +69,8 @@
                 </div>
             </div>
         </footer>
-
     </div>
-    <!-- /.container -->
-
-    <!-- jQuery -->
     <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
 </body>
-
 </html>

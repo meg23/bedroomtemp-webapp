@@ -1,9 +1,12 @@
 
 import webapp2
 import json
+import logging
 from google.appengine.api import memcache
 from google.appengine.api import urlfetch
-from secrets import DEVICE_ID, ACCESS_TOKEN
+from secrets import *
+
+log = logging.getLogger('webapp')
 
 class Photon(object):
     
@@ -19,6 +22,7 @@ class Photon(object):
             result = rpc.get_result()
             json_string = result.content
             data = json.loads(json_string)
+            log.info(data)
             core_info =  data["coreInfo"]
             temp = int(data["result"])
 
